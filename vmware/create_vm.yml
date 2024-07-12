@@ -1,0 +1,22 @@
+- hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: Import common vars
+      ansible.builtin.include_vars:
+        file: vars.yml
+
+    - name: "Test setup: Create VM guest {{ vm }}"
+      community.vmware.vmware_guest:
+        validate_certs: false
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        cluster: "{{ vm_cluster }}"
+        datacenter: "{{ vm_datacenter }}"
+        folder: "{{ vm_folder }}"
+        state: present
+        name: "{{ vm }}"
+        disk: "{{ vm_disk }}"
+        guest_id: "{{ vm_guest_id }}"
+        hardware: "{{ vm_hardware }}"

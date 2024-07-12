@@ -1,0 +1,20 @@
+- hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: Import common vars
+      ansible.builtin.include_vars:
+        file: vars.yml
+
+    - name: "Test teardown: Destroy VM guest {{ vm }}"
+      community.vmware.vmware_guest:
+        validate_certs: false
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        cluster: "{{ vm_cluster }}"
+        datacenter: "{{ vm_datacenter }}"
+        folder: "{{ vm_folder }}"
+        state: absent
+        force: true
+        name: "{{ vm }}"
