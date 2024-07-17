@@ -6,20 +6,6 @@
       ansible.builtin.include_vars:
         file: vars.yml
 
-    - name: Get current VM facts
-      community.vmware.vmware_guest_info:
-        validate_certs: false
-        hostname: "{{ vcenter_hostname }}"
-        username: "{{ vcenter_username }}"
-        password: "{{ vcenter_password }}"
-        datacenter: "{{ vm_datacenter }}"
-        name: "{{ vm }}"
-      register: vm_facts
-
-    - name: Debug VM facts
-      ansible.builtin.debug:
-        var: vm_facts
-
     - name: "Test setup: Create VM guest {{ vm }}"
       community.vmware.vmware_guest:
         validate_certs: false
