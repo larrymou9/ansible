@@ -9,12 +9,12 @@ vm_folder: "/{{ vcenter_datacenter }}/vm/e2e-qe"
 vm_network_name: "VM Network"
 vm_guest_id: "rhel8_64Guest"
 vm_disk:
-  - size_gb: 10
+  - size_gb: 50
     type: thin
     datastore: datastore2
 vm_hardware:
   memory_mb: 2000
-  num_cpus: 2
+  num_cpus: 4
   boot_firmware: efi
 
 template_host: 10.46.29.208
