@@ -20,3 +20,13 @@
         disk: "{{ vm_disk }}"
         guest_id: "{{ vm_guest_id }}"
         hardware: "{{ vm_hardware }}"
+        cdrom:
+          - controller_number: 0
+            unit_number: 0
+            state: present
+            type: iso
+            iso_path: "{{ datastore1_rhel_8_9_iso_path }}"
+        networks:
+          - name: "{{ vm_network_name }}"
+            device_type: "vmxnet3"
+            type: "dhcp"

@@ -6,6 +6,7 @@ vm: "{{ tiny_prefix }}-vm"
 vm_cluster: "{{ vcenter_cluster_name }}"
 vm_datacenter: "{{ vcenter_datacenter }}"
 vm_folder: "/{{ vcenter_datacenter }}/vm/e2e-qe"
+vm_network_name: "VM Network"
 vm_guest_id: "rhel8_64Guest"
 vm_disk:
   - size_gb: 10
@@ -17,6 +18,7 @@ vm_hardware:
   boot_firmware: efi
 
 template_host: 10.46.29.208
-datastore: datastore2
+datastore: datastore1
+datastore1_rhel_8_9_iso_path: "[datastore1] ISO/rhel-8.9-x86_64-boot.iso"
 library: "{{ tiny_prefix }}-content-library"
 template_name: "{{ tiny_prefix }}-template"
