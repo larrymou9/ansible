@@ -40,7 +40,7 @@
             state: present
             type: iso
             iso_path: "{{ datastore1_rhel_8_9_iso_path }}"
-        networks:
-          - name: "{{ vm_network_name }}"
-            device_type: "vmxnet3"
-            type: "dhcp"
+        # networks:
+        #  - name: "{{ vm_network_name }}"
+        #    device_type: "vmxnet3"
+        #    type: "dhcp"
