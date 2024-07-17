@@ -19,6 +19,6 @@ vm_hardware:
 
 template_host: 10.46.29.208
 datastore: datastore1
-datastore1_rhel_8_9_iso_path: "[datastore1] ISO/rhel-8.9-x86_64-boot.iso"
+datastore1_rhel_9_3_iso_path: "[datastore1] ISO/rhel-9.3-x86_64-dvd.iso"
 library: "{{ tiny_prefix }}-content-library"
 template_name: "{{ tiny_prefix }}-template"
