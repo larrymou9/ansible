@@ -12,7 +12,6 @@
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
-        cluster: "{{ vm_cluster }}"
         datacenter: "{{ vm_datacenter }}"
         name: "{{ vm }}"
       register: vm_facts
