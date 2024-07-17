@@ -11,7 +11,7 @@ vm_guest_id: "rhel8_64Guest"
 vm_disk:
   - size_gb: 50
     type: thin
-    datastore: datastore2
+    datastore: datastore1
 vm_hardware:
   memory_mb: 2000
   num_cpus: 4
