@@ -33,4 +33,4 @@
         validate_certs: false
         datacenter: "{{ vm_datacenter }}"
         name: "{{ vm_name }}"
-        state: powered_on
+        state: powered-on
