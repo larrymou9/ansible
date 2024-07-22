@@ -15,7 +15,7 @@
         datacenter: "{{ vm_datacenter }}"
         cluster: "{{ vm_cluster }}"
         name: "{{ vm_name }}"
-        template: "{{ template_name_2 }}"
+        template: "{{ template_name }}"
         folder: "{{ vm_folder }}"
         state: present
         networks:

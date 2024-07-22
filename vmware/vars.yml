@@ -2,7 +2,6 @@ vcenter_cluster_name: "Eco-Cluster"
 vcenter_datacenter: "Eco-Datacenter"
 vcenter_port: 443
 
-vm: "{{ tiny_prefix }}-vm"
 vm_cluster: "{{ vcenter_cluster_name }}"
 vm_datacenter: "{{ vcenter_datacenter }}"
 vm_folder: "/{{ vcenter_datacenter }}/vm/e2e-qe"
@@ -17,11 +16,9 @@ vm_hardware:
   num_cpus: 4
   boot_firmware: efi
 
-template_host: 10.46.29.208
 datastore: datastore1
 datastore_for_template_name: eco-nfs-datastore-iso
 datastore1_rhel_9_3_iso_path: "[datastore1] ISO/rhel-9.3-x86_64-dvd.iso"
 library: "{{ tiny_prefix }}-content-library"
-template_name: "{{ tiny_prefix }}-template"
-template_name_2: test-metrics-utility-vm
-vm_name: chris-metrics-utility-playbook
+template_name: test-metrics-utility-vm-template
+vm_name: metrics-utility-vm
