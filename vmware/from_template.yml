@@ -26,7 +26,7 @@
         wait_for_ip_address: yes
 
     - name: "Power on the newly created VM"
-      community.vmware.vmware_vm_powerstate:
+      community.vmware.vmware_guest_powerstate:
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
