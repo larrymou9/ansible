@@ -19,6 +19,9 @@ vm_hardware:
 
 template_host: 10.46.29.208
 datastore: datastore1
+datastore_for_template_name: eco-nfs-datastore-iso
 datastore1_rhel_9_3_iso_path: "[datastore1] ISO/rhel-9.3-x86_64-dvd.iso"
 library: "{{ tiny_prefix }}-content-library"
 template_name: "{{ tiny_prefix }}-template"
+template_name_2: test-metrics-utility-vm
+vm_name: chris-metrics-utility-playbook
