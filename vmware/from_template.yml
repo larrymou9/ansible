@@ -53,7 +53,7 @@
 
     - name: "Set VM IP Address as fact"
       set_fact:
-        vm_ip: "{{ vm_facts.virtual_machines[0].esxi_hostname }"
+        vm_ip: "{{ vm_facts.virtual_machines[0].esxi_hostname }}"
 
 - hosts: "{{ vm_ip }}"
   tasks:
