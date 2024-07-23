@@ -45,4 +45,4 @@
 
     - name: "Display VM IP Address"
       debug:
-        msg: "The IP address of the VM is {{ vm_facts.virtual_machines[0].guest.ip_address }}"
+        msg: "The IP address of the VM is {{ vm_facts.virtual_machines[0].ip_address }}"
