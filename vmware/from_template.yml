@@ -41,7 +41,6 @@
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
         validate_certs: false
-        datacenter: "{{ vm_datacenter }}"
         name: "{{ vm_name }}"
       register: vm_facts
 
