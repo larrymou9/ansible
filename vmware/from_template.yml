@@ -55,7 +55,8 @@
       set_fact:
         vm_ip: "{{ vm_facts.virtual_machines[0].esxi_hostname }"
 
+- hosts: "{{ vm_ip }}"
+  tasks:
     - name: "Ping the new VM"
       ansible.builtin.ping:
       delegate_to: "{{ vm_ip }}"
-      hosts: "{{ vm_ip }}"
