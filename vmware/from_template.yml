@@ -49,4 +49,4 @@
 
     - name: "Display VM IP Address"
       debug:
-        msg: "The IP address of the VM is {{ vm_info.virtual_machines[0].vm_network[vm_info.virtual_machines[0].mac_address[0]]['ipv4'][0] }}"
+        msg: "The IP address of the VM is {{ vm_facts.virtual_machines[0].esxi_hostname }}"
