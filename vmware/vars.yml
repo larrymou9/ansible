@@ -22,3 +22,5 @@ datastore1_rhel_9_3_iso_path: "[datastore1] ISO/rhel-9.3-x86_64-dvd.iso"
 library: "{{ tiny_prefix }}-content-library"
 template_name: test-metrics-utility-vm-template
 vm_name: metrics-utility-vm
+username: admin
+password: admin
