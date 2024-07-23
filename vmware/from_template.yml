@@ -55,8 +55,12 @@
       set_fact:
         vm_ip: "{{ vm_facts.virtual_machines[0].esxi_hostname }}"
 
-- hosts: "{{ vm_ip }}"
+    - name: "Add VM to the inventory"
+      ansible.builtin.add_host:
+        name: "{{ vm_ip }}"
+        groups: new_vms
+
+- hosts: new_vms
   tasks:
     - name: "Ping the new VM"
       ansible.builtin.ping:
-      delegate_to: "{{ vm_ip }}"
