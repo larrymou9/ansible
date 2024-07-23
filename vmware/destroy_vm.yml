@@ -6,7 +6,7 @@
       ansible.builtin.include_vars:
         file: vars.yml
 
-    - name: "Test teardown: Destroy VM guest {{ vm }}"
+    - name: "Test teardown: Destroy VM guest {{ vm_name }}"
       community.vmware.vmware_guest:
         validate_certs: false
         hostname: "{{ vcenter_hostname }}"
@@ -17,4 +17,4 @@
         folder: "{{ vm_folder }}"
         state: absent
         force: true
-        name: "{{ vm }}"
+        name: "{{ vm_name }}"
