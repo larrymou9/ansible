@@ -41,7 +41,6 @@
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
         validate_certs: false
-        name: "{{ vm_name }}"
       register: vm_facts
 
     - name: "Display VM IP Address"
