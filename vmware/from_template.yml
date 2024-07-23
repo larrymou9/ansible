@@ -59,6 +59,8 @@
       ansible.builtin.add_host:
         name: "{{ vm_ip }}"
         groups: new_vms
+        ansible_user: "{{ username }}"
+        ansible_ssh_pass: "{{ password }}"
 
 - hosts: new_vms
   tasks:
