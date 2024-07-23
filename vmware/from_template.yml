@@ -43,9 +43,9 @@
         validate_certs: false
       register: vm_facts
 
-    - name: "Display facts"
-      debug:
-        msg: "{{ vm_facts }}"
+    # - name: "Display facts"
+    #  debug:
+    #    msg: "{{ vm_facts }}"
 
     - name: "Set VM IP Address as fact"
       set_fact:
