@@ -49,11 +49,11 @@
 
     - name: "Display VM IP Address"
       debug:
-        msg: "The IP address of the VM is {{ vm_facts.virtual_machines[0].vm_network[vm_facts.virtual_machines[0].mac_address[0]]['ipv4'][0] }}"
+        msg: "The IP address of the VM is {{ (vm_facts.virtual_machines | selectattr('guest_name', 'equalto', 'test-metrics-utility-vm-template') | first).ip_address }}"
 
     - name: "Set VM IP Address as fact"
       set_fact:
-        vm_ip: "{{ vm_facts.virtual_machines[0].vm_network[vm_facts.virtual_machines[0].mac_address[0]]['ipv4'][0] }}"
+        vm_ip: "{{ (vm_facts.virtual_machines | selectattr('guest_name', 'equalto', 'test-metrics-utility-vm-template') | first).ip_address }}"
 
     - name: "Add VM to the inventory"
       ansible.builtin.add_host:
