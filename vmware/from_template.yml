@@ -5,7 +5,7 @@
     - name: Import common vars
       ansible.builtin.include_vars:
         file: vars.yml
-
+        
     - name: "Clone VM from template"
       community.vmware.vmware_guest:
         hostname: "{{ vcenter_hostname }}"
