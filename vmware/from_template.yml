@@ -7,6 +7,26 @@
       ansible.builtin.include_vars:
         file: vars.yml
         
+    - name: "Clone VM from template"
+      community.vmware.vmware_guest:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        validate_certs: false
+        datacenter: "{{ vm_datacenter }}"
+        cluster: "{{ vm_cluster }}"
+        name: "{{ vm_name }}"
+        template: "{{ template_name }}"
+        folder: "{{ vm_folder }}"
+        state: present
+        networks:
+          - name: "{{ vm_network_name }}"
+            device_type: "vmxnet3"
+            type: "dhcp"
+        datastore: "{{ datastore_for_template_name }}"
+        wait_for_ip_address: yes
+
+
     - name: "Power on the newly created VM"
       community.vmware.vmware_guest_powerstate:
         hostname: "{{ vcenter_hostname }}"
