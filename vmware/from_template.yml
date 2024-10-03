@@ -1,4 +1,4 @@
-- hosts: localhost
+- hosts: all
   gather_facts: no
   vars:
     scan_use_checksum: false
@@ -16,10 +16,6 @@
         validate_certs: false
       register: vm_facts
 
-    # - name: "Display facts"
-    #  debug:
-    #    msg: "{{ vm_facts }}"
-
     - name: "Set VM IP Address as fact"
       set_fact:
         vm_ip: "{{ (vm_facts.virtual_machines | selectattr('guest_name', 'equalto', vm_name) | first).ip_address }}"
@@ -28,12 +24,6 @@
       debug:
         msg: "The IP address of the VM is {{ vm_ip }}"
 
-    - name: "Add VM to the inventory"
-      ansible.builtin.add_host:
-        name: "{{ vm_ip }}"
-        groups: new_vms
-        ansible_user: "{{ username }}"
-        ansible_ssh_pass: "{{ password }}"
 
 - hosts: new_vms
   tasks:
