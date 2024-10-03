@@ -9,6 +9,10 @@
       ansible.builtin.pip:
         name: ansible
 
+    - name: Import common vars
+      ansible.builtin.include_vars:
+        file: vars.yml
+
     - name: "Get VM details"
       community.vmware.vmware_vm_info:
         hostname: "{{ vcenter_hostname }}"
