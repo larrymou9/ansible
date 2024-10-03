@@ -4,7 +4,7 @@
     scan_use_checksum: false
     scan_use_recursive: false
   tasks:
-    - name: "Install pip"
+    - name: Install pip
       community.general.easy_install:
         name: pip
         state: latest
