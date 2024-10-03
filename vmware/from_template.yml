@@ -4,10 +4,10 @@
     scan_use_checksum: false
     scan_use_recursive: false
   tasks:
-    - name: Import common vars
-      ansible.builtin.include_vars:
-        file: vars.yml
-
+    - name: Install bottle python package
+      ansible.builtin.pip:
+        name: ansible
+        
     - name: "Get VM details"
       community.vmware.vmware_vm_info:
         hostname: "{{ vcenter_hostname }}"
