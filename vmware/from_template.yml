@@ -1,4 +1,5 @@
-- hosts: all
+- hosts: localhost
+  gather_facts: no
   vars:
     scan_use_checksum: false
     scan_use_recursive: false
@@ -6,12 +7,12 @@
     - name: Import common vars
       ansible.builtin.include_vars:
         file: vars.yml
-        
+
     - name: "Clone VM from template"
       community.vmware.vmware_guest:
-        hostname: "{{ vcenter_hostname }}"
-        username: "{{ vcenter_username }}"
-        password: "{{ vcenter_password }}"
+        hostname: "eco-vcenter-server.lab.eng.tlv2.redhat.com"
+        username: "ctorrens@ecosystem.content.vsphere"
+        password: "Ecoctorrens12345!"
         validate_certs: false
         datacenter: "{{ vm_datacenter }}"
         cluster: "{{ vm_cluster }}"

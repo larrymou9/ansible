@@ -24,3 +24,7 @@ template_name: test-metrics-utility-vm-template
 vm_name: metrics-utility-vm
 username: admin
 password: admin
+vcenter_hostname: eco-vcenter-server.lab.eng.tlv2.redhat.com
+vcenter_username: ctorrens@ecosystem.content.vsphere
+vcenter_password: Ecoctorrens12345!
+
