@@ -1,4 +1,4 @@
-- hosts: localhost
+- hosts: all
   gather_facts: yes
   vars:
     scan_use_checksum: false
@@ -14,13 +14,13 @@
       ansible.builtin.include_vars:
         file: vars.yml
 
-    - name: "Get VM details"
-      community.vmware.vmware_vm_info:
-        hostname: "{{ vcenter_hostname }}"
-        username: "{{ vcenter_username }}"
-        password: "{{ vcenter_password }}"
-        validate_certs: false
-      register: vm_facts
+    # - name: "Get VM details"
+    #   community.vmware.vmware_vm_info:
+    #     hostname: "{{ vcenter_hostname }}"
+    #     username: "{{ vcenter_username }}"
+    #     password: "{{ vcenter_password }}"
+    #     validate_certs: false
+    #   register: vm_facts
 
     # - name: "Set VM IP Address as fact"
     #   set_fact:
@@ -29,4 +29,3 @@
     # - name: "Display VM IP Address"
     #   debug:
     #     msg: "The IP address of the VM is {{ vm_ip }}"
-
