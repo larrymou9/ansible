@@ -1,9 +1,8 @@
 - hosts: all
-  gather_facts: no
+  gather_facts: yes 
 
+  
   tasks:
-    - setup:
-        gather_subset:
-          - 'min'
-    - debug:
-        var: ansible_date_time.date
+    - name: Import common vars
+      ansible.builtin.include_vars:
+        file: vars.yml
