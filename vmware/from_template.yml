@@ -14,13 +14,13 @@
       ansible.builtin.include_vars:
         file: vars.yml
 
-    # - name: "Get VM details"
-    #   community.vmware.vmware_vm_info:
-    #     hostname: "{{ vcenter_hostname }}"
-    #     username: "{{ vcenter_username }}"
-    #     password: "{{ vcenter_password }}"
-    #     validate_certs: false
-    #   register: vm_facts
+    - name: "Get VM details"
+      community.vmware.vmware_vm_info:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        validate_certs: false
+      register: vm_facts
 
     # - name: "Set VM IP Address as fact"
     #   set_fact:
