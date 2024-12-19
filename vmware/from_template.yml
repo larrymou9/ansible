@@ -4,7 +4,12 @@
     scan_use_checksum: false
     scan_use_recursive: false
   tasks:
-  
+    - setup:
+        gather_subset:
+          - 'min'
+    - debug:
+        var: ansible_date_time.date
+        
     # - name: Install bottle python package
     #   ansible.builtin.pip:
     #     name: ansible
