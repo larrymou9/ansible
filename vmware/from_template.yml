@@ -5,10 +5,10 @@
     scan_use_recursive: false
   tasks:
   
-    - name: Install bottle python package
-      ansible.builtin.pip:
-        name: ansible
-        name: pyvmomi
+    # - name: Install bottle python package
+    #   ansible.builtin.pip:
+    #     name: ansible
+    #     name: pyvmomi
 
     # - name: Import common vars
     #   ansible.builtin.include_vars:
